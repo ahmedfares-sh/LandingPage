@@ -62,6 +62,7 @@ body {
   width: fit-content;
   margin: auto;
   position: relative;
+  text-transform: uppercase;
   padding: 10px 20px;
   margin-bottom: 80px;
   z-index: 2323;
@@ -401,7 +402,7 @@ header .links > li > a:hover::before {
 }
 /* end articles  */
 .gallery {
-  background-color: #ececec;
+  background-color: var(--section-background);
 }
 
 .gallery .container {
@@ -616,5 +617,279 @@ header .links > li > a:hover::before {
   left: -120%;
   z-index: -1;
   transition: 0.3s;
+  position: absolute;
+}
+/* end features  */
+
+.testimonials {
+  background-color: var(--section-background);
+}
+
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+@media (max-width: 767px) {
+  .testimonials .container {
+    grid-template-columns: 90%;
+  }
+
+  .testimonials .container .box {
+    margin-inline: auto;
+  }
+}
+.testimonials .container .box {
+  background-color: #fff;
+  border-radius: 10px;
+  position: relative;
+  padding: 20px;
+}
+.testimonials .container .box .avatar {
+  position: absolute;
+  top: -0%;
+  right: -0%;
+  transform: translate(30%, -50%);
+  border-radius: 100%;
+  width: 100px;
+  z-index: 222;
+  box-shadow: 0 0 0 10px var(--section-background);
+}
+.testimonials .container .box .avatar img {
+  border-radius: 100%;
+  max-width: 100%;
+}
+
+.testimonials .container .box .name {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.testimonials .container .box .job {
+  color: #777;
+}
+.testimonials .container .box .description {
+  color: #777;
+  line-height: 1.7;
+}
+.testimonials .container .box .starrating {
+  margin-block: 10px;
+}
+.testimonials .fa-solid {
+  color: #ffc107;
+}
+/* end testimonials  */
+/* start team  */
+
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 200px 40px;
+}
+.team .container .box {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  transition: 0.3s;
+  align-items: center;
+}
+.team .container .box::after,
+.team .container .box::before {
+  content: "";
+  width: 90%;
+  height: 130%;
+  position: absolute;
+  transition: 0.3s;
+  top: 0;
+  right: 0;
+  transform: translate(10%, -10%);
+  background-color: #eee;
+  z-index: -1;
+  border-radius: 10px;
+}
+.team .container .box::after {
+  width: 0%;
+}
+.team .container .box:hover::after {
+  width: 90%;
+  background-color: #ccc;
+}
+
+.team .container .box .image img {
+  max-width: 100%;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+.team .container .box:hover .image img {
+  filter: grayscale(1);
+}
+.team .container .box .links i {
+  color: gray;
+  font-size: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  display: block;
+}
+.team .container .box h3,
+.team .container .box p {
+  text-align: right;
+}
+.team .container .box h3 {
+  color: rgb(53, 164, 255);
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.team .container .box .links .fa-facebook-f:hover {
+  color: rgb(41, 62, 184);
+}
+
+.team .container .box .links .fa-twitter:hover {
+  color: rgb(53, 164, 255);
+}
+
+.team .container .box .links .fa-linkedin-in:hover {
+  color: rgb(41, 62, 184);
+}
+
+.team .container .box .links a .fa-youtube:hover {
+  color: red;
+}
+@media (max-width: 767px) {
+  .team .container {
+    grid-template-columns: 90%;
+  }
+
+  .team .container .box {
+    margin-inline: auto;
+  }
+}
+/*********************/
+/* start services */
+
+.services {
+  background-color: var(--section-background);
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .container .box {
+  background-color: white;
+  position: relative;
+  transition: 0.4s;
+  box-shadow: 0 0 5px 2px #aaa;
+}
+
+.services .container .box::before {
+  content: "";
+  background-color: var(--main-color-alt);
+  height: 3px;
+  width: 0%;
+  transition: 0.7s;
+  top: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.services .container .box:hover::before {
+  width: 100%;
+}
+.services .container .box:hover {
+  transform: translateY(-5px);
+}
+.services .container .box .content {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px;
+  text-align: center;
+}
+.services .container .box .content i {
+  color: gray;
+  font-size: 50px;
+}
+.services .container .box .content p {
+  font-size: 1.5em;
+  color: var(--main-color);
+  font-weight: 600;
+}
+.services .container .box .labeling {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background-color: #fafafa;
+}
+.services .container .box .labeling a {
+  color: var(--main-color);
+  font-weight: 600;
+  text-transform: capitalize;
+  padding-right: 20px;
+}
+.services .container .box .labeling span {
+  color: white;
+  background-color: var(--main-color);
+  font-size: 28px;
+  display: block;
+  height: 100%;
+  line-height: 40px;
+  padding-inline: 10px;
+  position: relative;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.services .container .box .labeling span::after {
+  content: "";
+  width: 50%;
+  height: 100%;
+  background-color: inherit;
+  top: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  box-shadow: 20px 0 0 0 gray;
+  transform: translateX(50%) skewX(-30deg);
+}
+.skills .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skills .container .progress {
+  padding: 10px;
+  flex-grow: 1;
+}
+.skills .container .progress p {
+  font-weight: 700;
+  font-size: 1.4em;
+}
+.skills .container .progress .bar {
+  height: 30px;
+  position: relative;
+  max-width: 100%;
+  background-color: #eee;
+}
+.skills .container .progress .bar .span {
+  content: "";
+  width: 70%;
+  height: 100%;
+  background-color: var(--main-color);
+  top: 0;
+  left: 0;
+  transition: 0.7s;
+  position: absolute;
+}
+.skills .container .progress .bar::after {
+  content: attr(data-width);
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  color: var(--main-color);
+  background-color: #fefefe;
+  border: var(--main-color) 2px solid;
+  top: -50px;
+  right: 0;
   position: absolute;
 }
