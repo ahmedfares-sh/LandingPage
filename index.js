@@ -14,7 +14,7 @@ const daysSpan = document.getElementById("days");
 const hoursSpan = document.getElementById("hours");
 const minutesSpan = document.getElementById("minutes");
 const secondSpan = document.getElementById("seconds");
-const date = new Date("2023-7-31 14:00:00");
+const date = new Date("2024-7-31 14:00:00");
 let started = false;
 
 //The Events Timer
